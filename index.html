@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🧘🏽‍♀️ Burnout Reset Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧘🏽‍♀️ Burnout Reset Toolkit</h1>
+
+    <button id="modeToggle">Toggle Dark/Light Mode</button>
+
+    <!-- Mood & Energy Tracker -->
+    <section>
+      <h2>1. Mood & Energy Tracker</h2>
+      <label for="mood">Mood:</label>
+      <select id="mood">
+        <option value="😊">Happy</option>
+        <option value="😐">Neutral</option>
+        <option value="😔">Low</option>
+        <option value="😤">Frustrated</option>
+      </select>
+
+      <label for="energy">Energy Level:</label>
+      <select id="energy">
+        <option value="⚡️">High</option>
+        <option value="🙂">Okay</option>
+        <option value="😴">Tired</option>
+        <option value="😵‍💫">Burnt Out</option>
+      </select>
+    </section>
+
+    <!-- Reset Buttons -->
+    <section>
+      <h2>2. Reset Buttons</h2>
+      <div class="reset-buttons">
+        <button onclick="playMusic()">🎧 Play Music</button>
+        <button onclick="startBreathworkTimer()">🫁 Breathwork</button>
+        <button onclick="showAffirmation()">💬 Affirmation</button>
+      </div>
+      <div class="affirmation" id="affirmation"></div>
+    </section>
+
+    <!-- Breathwork Timer -->
+    <section>
+      <h2>🫁 Breathwork Timer</h2>
+      <div id="breathCircle"></div>
+      <div id="breathText"></div>
+    </section>
+
+    <!-- Boost Me -->
+    <section>
+      <h2>3. Boost Me</h2>
+      <button onclick="showEncouragement()">✨ Boost Me</button>
+      <div class="encouragement" id="encouragement"></div>
+    </section>
+
+    <!-- Gentle To-Do List -->
+    <section>
+      <h2>4. Gentle To-Do List</h2>
+      <form id="todo-form">
+        <input type="text" id="todo-input" placeholder="What’s one small thing you want to do?" />
+        <button type="submit">Add Task</button>
+      </form>
+      <ul id="todo-list"></ul>
+    </section>
+
+    <!-- Music Player -->
+    <section>
+      <h2>🎶 Music Player</h2>
+      <audio id="musicPlayer" controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <!-- Journaling & Voice Notes -->
+    <section>
+      <h2>5. Journaling & Voice Notes</h2>
+
+      <label for="journal">Write Your Thoughts:</label>
+      <textarea id="journal" rows="5" placeholder="How are you really feeling? What do you want to say to yourself?"></textarea>
+      <button onclick="saveJournal()">📝 Save Journal</button>
+      <button onclick="downloadJournal()">⬇️ Download Journal</button>
+      <p id="journal-saved" style="color: green;"></p>
+
+      <hr />
+
+      <label>🎤 Voice Note:</label>
+      <button onclick="startRecording()">Start Recording</button>
+      <button onclick="stopRecording()">Stop</button>
+      <audio id="voicePlayer" controls style="display:none;"></audio>
+      <a id="downloadVoice" download="voice-note.webm" style="display:none;">⬇️ Download Voice Note</a>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
